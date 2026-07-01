@@ -1,0 +1,941 @@
+/* ================================================================
+   📱 STYLE UTAMA - Kandang Berkah Jaya
+   ================================================================
+   Cara edit untuk semua device:
+   ================================================================
+   1. Cari bagian yang mau diubah (misal: .produk-grid)
+   2. Ubah nilai di bagian DESKTOP (di luar @media)
+   3. Untuk TABLET, cari @media (max-width: 992px)
+   4. Untuk HP, cari @media (max-width: 768px) atau 480px
+   ================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+}
+
+/* ================================================================
+   🖥️ DESKTOP (LAYAR > 992px) - Default
+   ================================================================ */
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #1a472a;
+    color: white;
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-text span {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+}
+
+.logo-text small {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* ===== NAV MENU ===== */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    position: relative;
+}
+
+.nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    font-size: 14px;
+    display: block;
+    white-space: nowrap;
+}
+
+.nav-menu ul li a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown,
+.user-menu {
+    position: relative;
+}
+
+ul.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    padding: 8px 0;
+    list-style: none;
+    margin-top: 5px;
+    z-index: 99999;
+    display: none !important;
+}
+
+.dropdown-menu.show {
+    display: none !important;
+}
+
+.dropdown:hover > ul.dropdown-menu,
+.user-menu:hover > ul.dropdown-menu {
+    display: block !important;
+}
+
+.dropdown-menu li {
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: #333 !important;
+    padding: 10px 20px;
+    border-radius: 0;
+    font-size: 14px;
+    white-space: nowrap;
+    background: transparent !important;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background: #f0f7f0 !important;
+    color: #2c5f2d !important;
+}
+
+.user-menu .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+/* ===== BUTTON ===== */
+.btn-login {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-register {
+    background: #ffd700;
+    color: #333 !important;
+}
+
+.btn-register:hover {
+    background: #e6c200;
+}
+
+/* ===== DASHBOARD / BERANDA ===== */
+.dashboard-section,
+.beranda-section {
+    max-width: 1200px;
+    margin: 100px auto 30px;
+    padding: 0 20px;
+}
+
+.welcome-card,
+.welcome-banner {
+    background: linear-gradient(135deg, #2c5f2d, #1a472a);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.welcome-card h1,
+.welcome-banner h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* ===== STATISTIK ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2c5f2d;
+}
+
+.stat-label {
+    color: #666;
+    margin-top: 5px;
+}
+
+/* ===== TABEL PESANAN ===== */
+.recent-orders {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.recent-orders h2 {
+    margin-bottom: 20px;
+    color: #333;
+    border-left: 4px solid #2c5f2d;
+    padding-left: 15px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.order-table th {
+    background: #f5f5f5;
+}
+
+/* ===== BADGES ===== */
+.badge-warning {
+    background: #fff3cd;
+    color: #856404;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.badge-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.badge-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* ===== MENU GRID ===== */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: block;
+}
+
+.menu-card:hover {
+    background: #2c5f2d;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.menu-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.menu-card h3 {
+    margin-bottom: 5px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #1a472a;
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-logo {
+    width: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 12px;
+}
+
+/* ===== MOBILE TOGGLE ===== */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* ================================================================
+   📱 TABLET (LEBAR 768px - 992px)
+   ================================================================
+   ⚠️ Ubah di sini untuk tampilan TABLET:
+   - Jumlah kolom grid (2 kolom)
+   - Ukuran font lebih kecil
+   - Padding/margin disesuaikan
+   ================================================================ */
+
+@media (max-width: 992px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        width: 100%;
+        background: #1a472a;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin-top: 10px;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 5px;
+    }
+    
+    .nav-menu ul li a {
+        padding: 12px 16px;
+        border-radius: 10px;
+    }
+    
+    /* Dropdown di mobile - tampil semua */
+    ul.dropdown-menu {
+        position: static;
+        background: rgba(255,255,255,0.08);
+        box-shadow: none;
+        border-radius: 10px;
+        margin: 5px 0 5px 20px;
+        padding: 5px 0;
+        display: block !important;
+    }
+    
+    .dropdown-menu li a {
+        color: white !important;
+        padding: 10px 16px;
+    }
+    
+    .dropdown-menu li a:hover {
+        background: rgba(255,255,255,0.1) !important;
+        color: white !important;
+    }
+    
+    .user-menu .dropdown-menu {
+        right: auto;
+        left: 0;
+    }
+    
+    .dropdown:hover > ul.dropdown-menu,
+    .user-menu:hover > ul.dropdown-menu {
+        display: block !important;
+    }
+}
+
+/* ================================================================
+   📱 HP (LEBAR < 768px)
+   ================================================================
+   ⚠️ Ubah di sini untuk tampilan HP:
+   - Grid jadi 1-2 kolom
+   - Font lebih kecil
+   - Card full width
+   - Padding dikurangi
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .dashboard-section,
+    .beranda-section {
+        margin-top: 80px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;  /* ← Ubah ke 1fr untuk 1 kolom di HP */
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;       /* ← 1 kolom di HP */
+    }
+    
+    .welcome-card h1,
+    .welcome-banner h1 {
+        font-size: 22px;                 /* ← Ukuran font di HP */
+    }
+    
+    .welcome-card,
+    .welcome-banner {
+        padding: 20px;                   /* ← Padding lebih kecil */
+    }
+    
+    .order-table {
+        font-size: 12px;
+    }
+    
+    .order-table th,
+    .order-table td {
+        padding: 8px 10px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        margin: 0 auto 15px;
+    }
+}
+
+/* ================================================================
+   📱 HP KECIL (LEBAR < 480px)
+   ================================================================
+   ⚠️ Untuk HP dengan layar kecil (iPhone SE, dll)
+   ================================================================ */
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;       /* ← 1 kolom di HP kecil */
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-card h1,
+    .welcome-banner h1 {
+        font-size: 20px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .order-table {
+        font-size: 11px;
+        min-width: 480px;               /* ← Supaya tabel bisa di-scroll */
+    }
+    
+    .order-table th,
+    .order-table td {
+        padding: 6px 8px;
+    }
+    
+    .btn-detail {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+    
+    .footer {
+        padding: 20px 0 15px;
+    }
+}
+
+/* ================================================================
+   🖥️ ADMIN DASHBOARD - DESKTOP
+   ================================================================ */
+
+.admin-sidebar {
+    width: 260px;
+    background: #1a472a;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+}
+
+.sidebar-logo img {
+    max-width: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar-logo h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.sidebar-logo small {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sidebar-link:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.sidebar-link .icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+.logout {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== DROPDOWN LAPORAN ADMIN ===== */
+.dropdown-menu-admin {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #0d2d0e;
+}
+
+.dropdown-menu-admin li a {
+    display: block;
+    padding: 10px 20px 10px 56px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.dropdown-menu-admin li a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.dropdown-menu-admin.show {
+    display: block !important;
+}
+
+/* ===== ADMIN MAIN ===== */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-main {
+    flex: 1;
+    padding: 20px;
+    margin-left: 260px;
+    background: #f0f2f5;
+    min-height: 100vh;
+}
+
+/* ===== ADMIN STATISTIK ===== */
+.stats-grid-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-box .stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c5f2d;
+}
+
+.stat-box .stat-label {
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* ===== ADMIN TABEL ===== */
+.table-responsive {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    overflow-x: auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.admin-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+/* ===== ADMIN BADGE ===== */
+.badge-penerima {
+    background: #fff3cd;
+    color: #856404;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.penerima-info {
+    font-size: 11px;
+    color: #856404;
+    margin-top: 2px;
+    background: #fff8e1;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.no-hp-info {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.followup-catatan {
+    max-width: 250px;
+    word-wrap: break-word;
+}
+
+/* ===== ADMIN BUTTON ===== */
+.btn-icon {
+    padding: 4px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 2px;
+    display: inline-block;
+    font-size: 11px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-detail {
+    background: #17a2b8;
+    color: white;
+}
+
+.btn-update {
+    background: #ffc107;
+    color: #333;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-followup {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.btn-followup:hover {
+    background: #128C7E;
+    color: white;
+}
+
+.btn-wa {
+    background: #25D366;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.btn-wa:hover {
+    background: #128C7E;
+    color: white;
+}
+
+.btn-wa-customer {
+    background: #17a2b8;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.btn-wa-customer:hover {
+    background: #138496;
+    color: white;
+}
+
+.btn-add {
+    background: #2c5f2d;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn-add:hover {
+    background: #1a472a;
+    color: white;
+}
+
+.btn-save {
+    background: #2c5f2d;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-save:hover {
+    background: #1a472a;
+    color: white;
+}
+
+.btn-back {
+    background: #6c757d;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.btn-back:hover {
+    background: #5a6268;
+    color: white;
+}
+
+/* ===== ADMIN FILTER TABS ===== */
+.filter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    background: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    transition: all 0.3s;
+    font-size: 13px;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+    background: #2c5f2d;
+    color: white;
+    border-color: #2c5f2d;
+}
+
+/* ===== ADMIN FORM ===== */
+.form-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 600px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ================================================================
+   📱 ADMIN RESPONSIVE
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        display: none;           /* ← Sembunyikan sidebar di HP */
+    }
+    
+    .admin-main {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .admin-table {
+        font-size: 11px;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 6px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-table {
+        font-size: 10px;
+    }
+}
