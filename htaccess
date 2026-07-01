@@ -1,0 +1,63 @@
+# ================================================
+# HTACCESS - Kandang Berkah Jaya
+# ================================================
+
+Options -MultiViews
+RewriteEngine On
+
+# Base URL (sesuaikan dengan nama folder Anda)
+RewriteBase /kandang.berkah.jaya/
+
+# Redirect ke index.php
+DirectoryIndex index.php
+
+# Prevent directory listing
+Options -Indexes
+
+# Error pages
+ErrorDocument 404 /kandang.berkah.jaya/index.php
+ErrorDocument 403 /kandang.berkah.jaya/index.php
+
+# Block access to includes folder
+RewriteRule ^includes/ - [F,L]
+
+# Block access to config files
+RewriteRule ^.*config\.php$ - [F,L]
+RewriteRule ^.*koneksi\.php$ - [F,L]
+
+# Block access to uploads folder (only allow images)
+RewriteRule ^uploads/.*\.(php|phtml|php3|php4|php5|php7|phps|pl|py|cgi|exe|sh|bat)$ - [F,L]
+
+# Security - Prevent access to .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Security - Prevent access to .sql files
+<Files *.sql>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Compress files
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+# Cache static files
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Pretty URLs (opsional - uncomment jika ingin digunakan)
+# RewriteRule ^produk$ customer/produk.php [L]
+# RewriteRule ^jasa$ customer/jasa.php [L]
+# RewriteRule ^keranjang$ customer/keranjang.php [L]
+# RewriteRule ^checkout$ customer/checkout.php [L]
+# RewriteRule ^pesanan-saya$ customer/pesanan-saya.php [L]
